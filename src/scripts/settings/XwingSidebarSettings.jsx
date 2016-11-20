@@ -32,36 +32,39 @@ export default class XwingSidebarSettings extends React.Component {
     
     render() {
         return (
-            <div class="XwingSidebarSettings">
+            <div className="XwingSidebarSettings">
             
-                <div class="settings-row">
-                    <div class="setting-name inline">Start</div>
-                    <div class="setting-value inline">
+                <div className="settings-row">
+                    <div className="setting-name inline">Start</div>
+                    <div className="setting-value inline">
                         <input type="number"
                                min="1" max="100" step="1" value={this.state.startSeconds}
-                               onChange={this.handleSettingChange.bind(this, 'startSeconds')}>&nbsp;seconds
+                               onChange={this.handleSettingChange.bind(this, 'startSeconds')} />
+                            &nbsp;seconds
                     </div>
                 </div>
                 
-                <div class="settings-row">
-                    <div class="setting-name inline">Stop</div>
-                        <div class="setting-value inline">
+                <div className="settings-row">
+                    <div className="setting-name inline">Stop</div>
+                        <div className="setting-value inline">
                         <input type="number"
                                id="stop_seconds"
                                min="1" max="100" step="1" value={this.state.stopSeconds}
-                               onChange={this.handleSettingChange.bind(this, 'stopSeconds')}>&nbsp;seconds
+                               onChange={this.handleSettingChange.bind(this, 'stopSeconds')} />
+                            &nbsp;seconds
                     </div>
                 </div>
                 
-                <div class="settings-row">
-                    <div class="setting-name inline">Delay</div>
-                    <div class="setting-value inline">
+                <div className="settings-row">
+                    <div className="setting-name inline">Delay</div>
+                    <div className="setting-value inline">
                         <input type="number"
                                id="delay_seconds"
                                min="1" max="100" step="1" value={this.state.delaySeconds}
-                               onChange={this.handleSettingChange.bind(this, 'delaySeconds')}>&nbsp;seconds
+                               onChange={this.handleSettingChange.bind(this, 'delaySeconds')} />
+                            &nbsp;seconds
                     </div>
-                /div>
+                </div>
             </div>
         )
     }

@@ -4,17 +4,10 @@ import '../styles/xwingsidebar-settings.scss';
 import React    from 'react';
 import ReactDOM from 'react-dom';
 
-import actions from './settings-actions.js';
-import store   from './settings-store.js';
+import actions from './settings/settings-actions.js';
+import store   from './settings/settings-store.js';
 
 import XwingSidebarSettings from './settings/XwingSidebarSettings.jsx';
-
-
-
-ReactDOM.render(
-    <XwingSidebarSettings widgetSettings={gWidgetSettings} />,
-    document.getElementById('xwingsidebar-settings')
-);
 
 
 
@@ -24,6 +17,11 @@ window.SetWidgetSettings = (widgetSettings, appInfo) => {
     actions.setWidgetSettings(widgetSettings);
 };
 
+
+ReactDOM.render(
+    <XwingSidebarSettings />,
+    document.getElementById('xwingsidebar-settings')
+);
 
 
 

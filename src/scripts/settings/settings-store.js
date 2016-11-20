@@ -21,7 +21,7 @@ export default Reflux.createStore({
 
     onSettingsChanged: function(newSettings) {
         this.settings = newSettings;
-
+        console.log('changed');
         this.settings._runtime = {
             geometry: {
                 width: document.documentElement.scrollWidth,
