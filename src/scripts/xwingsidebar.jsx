@@ -1,5 +1,5 @@
 
-var css = require('../styles/xwingsidebar.scss');
+import '../styles/xwingsidebar.scss';
 
 
 var gWidgetSettings = {
@@ -40,4 +40,4 @@ window.onload = function() {
 
     // use setTimeout instead of setInterval so we can adjust delay on the fly
     setTimeout(updateCountdown, 1000 * gWidgetSettings.delaySeconds);
-}
+};

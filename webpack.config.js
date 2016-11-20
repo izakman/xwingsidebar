@@ -1,7 +1,7 @@
 module.exports = {
     entry: {
-        'xwingsidebar': "./src/scripts/xwingsidebar.js",
-        'xwingsidebar-settings': "./src/scripts/xwingsidebar-settings.js",
+        'xwingsidebar': "./src/scripts/xwingsidebar.jsx",
+        'xwingsidebar-settings': "./src/scripts/xwingsidebar-settings.jsx",
     },
     output: {
         path: './build',
@@ -11,7 +11,7 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 loaders: ['babel']
             },
