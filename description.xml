@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget name="xwingsidebar"
+		display_name="X-Wing Sidebar"
+		version="0.1.0"
+		creator="Iceman"
+		authentication_type=""
+		min_width="128"
+		min_height="128" 
+		settings_page="xwingsidebar-settings.html"
+		start_page="xwingsidebar.html"
+		settings_height="200"
+		api_version="1">
+</widget>

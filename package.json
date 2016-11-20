@@ -1,0 +1,33 @@
+{
+    "name": "xwingsidebar",
+    "version": "0.1.0",
+    "description": "Widget for Gameshow for showing X-Wing Miniatures Game lists in sidebar overlays.",
+    "main": "index.js",
+    "author": "Iceman",
+    "license": "MIT",
+    "scripts": {
+        "build": "webpack",
+        "watch": "webpack --watch",
+        "start": "webpack-dev-server"
+    },
+    "devDependencies": {
+        "babel": "^6.5.2",
+        "babel-core": "^6.18.2",
+        "babel-loader": "^6.2.8",
+        "babel-preset-es2015": "^6.18.0",
+        "css-loader": "^0.26.0",
+        "node-sass": "^3.13.0",
+        "sass-loader": "^4.0.2",
+        "style-loader": "^0.13.1",
+        "webpack": "^1.13.3",
+        "webpack-dev-server": "^1.16.2"
+    },
+    "dependencies": {
+        "xwing-data": "^0.21.0"
+    },
+    "babel": {
+        "presets": [
+            "es2015"
+        ]
+    }
+}
