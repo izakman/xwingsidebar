@@ -11,6 +11,7 @@ import XwingSidebarSettings from './settings/XwingSidebarSettings.jsx';
 
 
 if (typeof window !== 'undefined' && window.document) {
+	
 	window.GetWidgetSettings = () => store.getSettings();
 
 	window.SetWidgetSettings = (widgetSettings, appInfo) => {
@@ -19,13 +20,14 @@ if (typeof window !== 'undefined' && window.document) {
 
 	ReactDOM.render(
 	    <XwingSidebarSettings />,
-	    document.getElementById('xwingsidebar-settings')
+	    document.getElementById('xwingsidebar-app')
 	);
+	
+} else {
+	
+	module.exports = XwingSidebarSettings;
+	
 }
-
-
-
-module.exports = XwingSidebarSettings;
 
 
 
