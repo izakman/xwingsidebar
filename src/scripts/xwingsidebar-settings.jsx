@@ -1,8 +1,7 @@
 
-import '../styles/xwingsidebar-settings.scss';
-
 import React    from 'react';
 import ReactDOM from 'react-dom';
+import ReactDOMServer from 'react-dom/server';
 
 import actions from './settings/settings-actions.js';
 import store   from './settings/settings-store.js';
@@ -10,21 +9,36 @@ import store   from './settings/settings-store.js';
 import XwingSidebarSettings from './settings/XwingSidebarSettings.jsx';
 
 
+if (typeof document !== 'undefined' && typeof window !== 'undefined') {
 
-window.GetWidgetSettings = () => store.getSettings();
+    window.GetWidgetSettings = () => store.getSettings();
 
-window.SetWidgetSettings = (widgetSettings, appInfo) => {
-    actions.setWidgetSettings(widgetSettings);
+    window.SetWidgetSettings = (widgetSettings, appInfo) => {
+        actions.setWidgetSettings(widgetSettings);
+    };
+
+    ReactDOM.render(
+        <XwingSidebarSettings />,
+        document.getElementById('xwingsidebar-settings')
+    );
+}
+
+
+export default () => {
+    return <html>Hello You!</html>;
 };
 
 
-ReactDOM.render(
-    <XwingSidebarSettings />,
-    document.getElementById('xwingsidebar-settings')
-);
 
 
 
+// let inputEl = document.createElement('input');
+// inputEl.setAttribute("type", "text");
+// inputEl.setAttribute("value", "new");
+
+// let divEl = document.getElementById("input-wrap");
+
+// divEl.appendChild(inputEl);
 
 
 

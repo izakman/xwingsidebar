@@ -12,22 +12,19 @@ export default class XwingSidebarSettings extends React.Component {
         this.state = store.getSettings();
     }
     
-    onNewSettings(newSettings) {
-        this.setState(newSettings);
-    }
     componentDidMount() {
-        this.unsubscribe = store.listen(this.onNewSettings);
+        this.unsubscribe = store.listen( (newSettings) => this.setState(newSettings) );
     }
     componentWillUnmount() {
         this.unsubscribe();
     }
     
-    handleSettingChange(setting) {
-        return function(event) {
+    getHandlerSettingChange(setting) {
+        return (event) => {
             let newSettings = JSON.parse(JSON.stringify(this.state));
             newSettings[setting] = event.target.value;
             actions.settingsChanged(newSettings);
-        }.bind(this)
+        }
     }
     
     render() {
@@ -39,7 +36,7 @@ export default class XwingSidebarSettings extends React.Component {
                     <div className="setting-value inline">
                         <input type="number"
                                min="1" max="100" step="1" value={this.state.startSeconds}
-                               onChange={this.handleSettingChange.bind(this, 'startSeconds')} />
+                               onChange={this.getHandlerSettingChange('startSeconds')} />
                             &nbsp;seconds
                     </div>
                 </div>
@@ -50,7 +47,7 @@ export default class XwingSidebarSettings extends React.Component {
                         <input type="number"
                                id="stop_seconds"
                                min="1" max="100" step="1" value={this.state.stopSeconds}
-                               onChange={this.handleSettingChange.bind(this, 'stopSeconds')} />
+                               onChange={this.getHandlerSettingChange('stopSeconds')} />
                             &nbsp;seconds
                     </div>
                 </div>
@@ -61,7 +58,7 @@ export default class XwingSidebarSettings extends React.Component {
                         <input type="number"
                                id="delay_seconds"
                                min="1" max="100" step="1" value={this.state.delaySeconds}
-                               onChange={this.handleSettingChange.bind(this, 'delaySeconds')} />
+                               onChange={this.getHandlerSettingChange('delaySeconds')} />
                             &nbsp;seconds
                     </div>
                 </div>

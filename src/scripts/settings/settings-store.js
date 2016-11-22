@@ -21,15 +21,16 @@ export default Reflux.createStore({
 
     onSettingsChanged: function(newSettings) {
         this.settings = newSettings;
-        console.log('changed');
-        this.settings._runtime = {
-            geometry: {
-                width: document.documentElement.scrollWidth,
-                height: document.documentElement.scrollHeight
-            }
-        };
+        if (typeof window !== 'undefined') {
+            this.settings._runtime = {
+                geometry: {
+                    width: document.documentElement.scrollWidth,
+                    height: document.documentElement.scrollHeight
+                }
+            };
 
-        if (window.hostApp) window.hostApp.execute('apply_widget_settings', JSON.stringify(this.settings));
+            if (window.hostApp) window.hostApp.execute('apply_widget_settings', JSON.stringify(this.settings));
+        }
 
         this.trigger(this.settings);
     },

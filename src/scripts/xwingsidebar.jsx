@@ -2,6 +2,25 @@
 import '../styles/xwingsidebar.scss';
 
 
+
+
+
+let inputEl = document.createElement('img');
+inputEl.setAttribute("src", "images/logo.png");
+
+let divEl = document.getElementById("new_thing");
+
+divEl.appendChild(inputEl);
+
+
+
+
+
+
+
+
+
+
 var gWidgetSettings = {
     startSeconds: "10",
     stopSeconds: "0",
