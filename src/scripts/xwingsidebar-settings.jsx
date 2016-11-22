@@ -10,20 +10,22 @@ import store   from './settings/settings-store.js';
 import XwingSidebarSettings from './settings/XwingSidebarSettings.jsx';
 
 
+if (typeof window !== 'undefined' && window.document) {
+	window.GetWidgetSettings = () => store.getSettings();
 
-window.GetWidgetSettings = () => store.getSettings();
+	window.SetWidgetSettings = (widgetSettings, appInfo) => {
+	    actions.setWidgetSettings(widgetSettings);
+	};
 
-window.SetWidgetSettings = (widgetSettings, appInfo) => {
-    actions.setWidgetSettings(widgetSettings);
-};
-
-
-ReactDOM.render(
-    <XwingSidebarSettings />,
-    document.getElementById('xwingsidebar-settings')
-);
+	ReactDOM.render(
+	    <XwingSidebarSettings />,
+	    document.getElementById('xwingsidebar-settings')
+	);
+}
 
 
+
+module.exports = XwingSidebarSettings;
 
 
 
