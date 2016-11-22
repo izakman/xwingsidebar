@@ -1,5 +1,5 @@
 
-import '../styles/xwingsidebar-settings.scss';
+// import '../styles/xwingsidebar-settings.scss';
 
 import React    from 'react';
 import ReactDOM from 'react-dom';

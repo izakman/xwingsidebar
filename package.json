@@ -23,18 +23,19 @@
         "serve": "^1.4.0",
         "style-loader": "^0.13.1",
         "webpack": "^1.13.3",
-        "webpack-dev-server": "^1.16.2"
+        "webpack-dev-server": "^1.16.2",
+        "gulp": "^3.9.1",
+        "gulp-notify": "^2.2.0",
+        "gulp-plumber": "^1.1.0",
+        "gulp-sass": "^2.3.2",
+        "gulp-sourcemaps": "^1.9.1",
+        "vinyl-named": "^1.1.0",
+        "webpack-stream": "^3.2.0"
     },
     "dependencies": {
         "react": "^15.4.0",
         "react-dom": "^15.4.0",
         "reflux": "^5.0.1",
         "xwing-data": "^0.21.0"
-    },
-    "babel": {
-        "presets": [
-            "es2015",
-            "react"
-        ]
     }
 }

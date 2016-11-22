@@ -1,5 +1,5 @@
 
-import '../styles/xwingsidebar.scss';
+// import '../styles/xwingsidebar.scss';
 
 
 var gWidgetSettings = {
